@@ -1,0 +1,18 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+h1 {
+    color: #333;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: green;
+}
