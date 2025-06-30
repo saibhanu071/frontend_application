@@ -1,0 +1,21 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # This installs Node.js dependencies like 'aws-amplify' from your package.json.
+        # Keep this if you have 'aws-amplify' in your package.json dependencies.
+        - npm ci
+    build:
+      commands:
+        # IMPORTANT: Remove 'npm run build' as you don't have this script in your package.json.
+        # Your app is a static site (HTML, CSS, JS directly served from 'src'),
+        # so no specific build command is needed here.
+        [] # This means no commands are run during the build phase.
+  artifacts:
+    baseDirectory: src # THIS IS THE CRITICAL FIX for your output directory
+    files:
+      - '**/*' # This means include all files from the 'src' directory
+  cache:
+    paths:
+      - node_modules/**/* # Cache node_modules to speed up subsequent builds if 'npm ci' runs.
